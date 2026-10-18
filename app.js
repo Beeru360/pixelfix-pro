@@ -1,3 +1,4 @@
+if(!document.getElementById("resizeBtn")){/* Homepage uses navigation cards only. */} else {
 const $=id=>document.getElementById(id);const nf=new Intl.NumberFormat('en-IN');const size=n=>n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(2)+' MB';
 function say(id,msg,type=''){const e=$(id);e.textContent=msg;e.className='status '+type}
 function chosen(id){return $(id).files?.[0]}
@@ -21,3 +22,5 @@ $('applyPreset').onclick=()=>{const [w,h]=$('preset').value.split(',');$('resize
 $('toolSearch').addEventListener('input',()=>{const q=$('toolSearch').value.toLowerCase();document.querySelectorAll('.tool').forEach(t=>t.classList.toggle('hidden',!(t.dataset.search+' '+t.innerText.toLowerCase()).includes(q)));});
 $('year').textContent=new Date().getFullYear();
 if(window.pdfjsLib){pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';say('pdfStatus','PDF.js ready. Select a page to convert.','good')}else window.addEventListener('load',()=>{if(window.pdfjsLib){pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';say('pdfStatus','PDF.js ready. Select a page to convert.','good')}else say('pdfStatus','PDF.js did not load. Check internet connection.','bad')});
+
+}

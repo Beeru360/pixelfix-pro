@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://beeru360.github.io/pixelfix-pro/sitemap.xml
