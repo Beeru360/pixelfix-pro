@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08111f">
+<title>PixelFix Pro — Free Image Converter, Photo Resizer & PDF Tools</title>
+<meta name="description" content="Free online image tools: resize photos, compress JPG and PNG, convert JPG to PNG or WEBP, crop and rotate images, convert PDF pages to PNG, and combine images into PDF.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<!-- Replace https://YOUR-DOMAIN.example/ with your real HTTPS domain before publishing. -->
+<link rel="canonical" href="https://YOUR-DOMAIN.example/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PixelFix Pro — Free Image Converter & PDF Tools">
+<meta property="og:description" content="Resize, compress, crop, rotate and convert images and PDF pages in your browser.">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/">
+<meta property="og:image" content="https://YOUR-DOMAIN.example/assets/social-preview.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PixelFix Pro — Free Image Converter & PDF Tools">
+<meta name="twitter:description" content="Free browser-based photo and PDF utilities.">
+<meta name="twitter:image" content="https://YOUR-DOMAIN.example/assets/social-preview.svg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"PixelFix Pro",
+  "url":"https://YOUR-DOMAIN.example/",
+  "applicationCategory":"MultimediaApplication",
+  "operatingSystem":"Any",
+  "browserRequirements":"Requires a modern browser with Canvas support",
+  "description":"Free online image resize, compression, conversion, crop, rotate, and PDF page conversion tools.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
+}
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<header class="top wrap">
+  <a class="brand" href="./" aria-label="PixelFix Pro home"><span class="logo">✦</span><span>PixelFix <b>Pro</b></span></a>
+  <a class="toplink" href="#tools">Open tools ↓</a>
+</header>
+<main>
+<section class="hero wrap">
+ <div><p class="eyebrow">FREE ONLINE IMAGE & PDF TOOLKIT</p>
+  <h1>Make every image<br><span>fit perfectly.</span></h1>
+  <p class="lead">Resize photos, reduce file size, convert JPG/PNG/WEBP, crop and rotate images, and turn PDF pages into PNG. Simple tools that work right in your browser.</p>
+  <a class="primary inline" href="#tools">Explore all tools</a>
+  <p class="smallnote">No account needed. Image processing stays in your browser; PDF rendering uses a third-party PDF.js library.</p>
+ </div>
+ <div class="hero-panel"><div class="spark">✦</div><p class="eyebrow">ONE SIMPLE WORKSPACE</p><div class="hero-stat">10 <small>tools & utilities</small></div><div class="statrow"><span>Image conversion</span><b>JPG · PNG · WEBP</b></div><div class="statrow"><span>Everyday utility</span><b>Resize · Crop · PDF</b></div></div>
+</section>
+<section class="wrap" id="tools">
+ <div class="sectionhead"><div><p class="eyebrow">TOOLS</p><h2>Choose a tool</h2></div><input id="toolSearch" class="search" type="search" placeholder="Search tools…" aria-label="Search tools"></div>
+ <div class="toolgrid">
+  <article class="tool" data-search="resize photo image pixels dimensions passport thumbnail"><span class="toolicon">↔</span><h3>Photo Resizer</h3><p>Set exact width and height, with optional aspect-ratio lock.</p><label class="filelabel">Choose image<input id="resizeFile" type="file" accept="image/*"></label><div class="two"><label>Width px<input id="resizeW" type="number" min="1" max="12000" value="800"></label><label>Height px<input id="resizeH" type="number" min="1" max="12000" value="800"></label></div><label class="check"><input id="ratio" type="checkbox" checked> Keep aspect ratio</label><button class="primary" id="resizeBtn">Resize & download</button><div class="preview" id="resizePreview">Image preview</div><p class="status" id="resizeStatus" aria-live="polite"></p></article>
+  <article class="tool" data-search="compress reduce size jpg jpeg png webp quality"><span class="toolicon">▧</span><h3>Image Compressor</h3><p>Adjust output quality to reduce JPG or WEBP file size.</p><label class="filelabel">Choose image<input id="compressFile" type="file" accept="image/*"></label><label>Quality <b id="qualityText">75%</b><input id="quality" type="range" min="10" max="100" value="75"></label><label>Output format<select id="compressType"><option value="image/jpeg">JPG</option><option value="image/webp">WEBP</option><option value="image/png">PNG (may be larger)</option></select></label><button class="primary" id="compressBtn">Compress & download</button><div class="preview" id="compressPreview">Image preview</div><p class="status" id="compressStatus" aria-live="polite"></p></article>
+  <article class="tool" data-search="convert jpg jpeg png webp image format"><span class="toolicon">⇄</span><h3>Image Converter</h3><p>Convert an image to PNG, JPG or WEBP.</p><label class="filelabel">Choose image<input id="convertFile" type="file" accept="image/*"></label><label>Convert to<select id="convertType"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option><option value="image/webp">WEBP</option></select></label><button class="primary" id="convertBtn">Convert & download</button><div class="preview" id="convertPreview">Image preview</div><p class="status" id="convertStatus" aria-live="polite"></p></article>
+  <article class="tool" data-search="crop cut trim image photo"><span class="toolicon">✂</span><h3>Image Cropper</h3><p>Crop the center of an image to your selected dimensions.</p><label class="filelabel">Choose image<input id="cropFile" type="file" accept="image/*"></label><div class="two"><label>Width px<input id="cropW" type="number" min="1" value="500"></label><label>Height px<input id="cropH" type="number" min="1" value="500"></label></div><button class="primary" id="cropBtn">Crop & download</button><div class="preview" id="cropPreview">Image preview</div><p class="status" id="cropStatus" aria-live="polite"></p></article>
+  <article class="tool" data-search="rotate turn image photo 90 180 270"><span class="toolicon">⟳</span><h3>Image Rotator</h3><p>Rotate an image by 90°, 180° or 270°.</p><label class="filelabel">Choose image<input id="rotateFile" type="file" accept="image/*"></label><label>Rotation<select id="rotateAngle"><option value="90">90° clockwise</option><option value="180">180°</option><option value="270">270° clockwise</option></select></label><button class="primary" id="rotateBtn">Rotate & download</button><div class="preview" id="rotatePreview">Image preview</div><p class="status" id="rotateStatus" aria-live="polite"></p></article>
+  <article class="tool" data-search="pdf to png convert pdf page image"><span class="toolicon">▤</span><h3>PDF to PNG</h3><p>Render one selected PDF page as a PNG image.</p><label class="filelabel">Choose PDF<input id="pdfFile" type="file" accept="application/pdf,.pdf"></label><div class="two"><label>Page number<input id="pdfPage" type="number" min="1" value="1"></label><label>Scale<select id="pdfScale"><option value="1">Standard</option><option value="1.5" selected>High</option><option value="2">Very high</option></select></label></div><button class="primary" id="pdfBtn">Convert page to PNG</button><div class="preview" id="pdfPreview">PDF preview</div><p class="status" id="pdfStatus" aria-live="polite">PDF.js loading…</p></article>
+  <article class="tool" data-search="jpg png photo image to pdf create combine multiple images"><span class="toolicon">▣</span><h3>Images to PDF</h3><p>Combine multiple images into one downloadable PDF.</p><label class="filelabel">Choose images<input id="imagesPdfFiles" type="file" accept="image/*" multiple></label><label>Page size<select id="pdfPaper"><option value="a4">A4</option><option value="letter">Letter</option><option value="image">Fit to image</option></select></label><button class="primary" id="imagesPdfBtn">Create PDF</button><p class="status" id="imagesPdfStatus" aria-live="polite">Uses jsPDF from CDN; internet is required.</p></article>
+  <article class="tool" data-search="image dimensions metadata inspect size resolution"><span class="toolicon">⌗</span><h3>Image Info</h3><p>Check dimensions, file size, MIME type and aspect ratio.</p><label class="filelabel">Choose image<input id="infoFile" type="file" accept="image/*"></label><div class="infobox" id="infoResult">Choose an image to inspect its details.</div></article>
+  <article class="tool" data-search="passport photo social post story youtube thumbnail preset resize"><span class="toolicon">▦</span><h3>Quick Size Presets</h3><p>Send common image dimensions to the Photo Resizer.</p><label>Preset<select id="preset"><option value="413,531">Passport-style photo — 413 × 531 px*</option><option value="1080,1080">Square post — 1080 × 1080 px</option><option value="1080,1350">Portrait post — 1080 × 1350 px</option><option value="1080,1920">Story — 1080 × 1920 px</option><option value="1280,720">Video thumbnail — 1280 × 720 px</option></select></label><button class="secondary" id="applyPreset">Apply preset</button><p class="status">*Official photo requirements vary; check the specific application instructions.</p></article>
+  <article class="tool" data-search="privacy file security offline browser local"><span class="toolicon">⌂</span><h3>Privacy & Limits</h3><p>Understand what happens to your files.</p><ul class="compact"><li>Image edits run locally in your browser.</li><li>This static page does not upload images to a backend.</li><li>PDF tools load libraries from a CDN.</li><li>HEIC, animated GIF, OCR, background removal and batch ZIP export are not included in this build.</li></ul></article>
+ </div>
+</section>
+<section class="wrap seo-content">
+ <h2>Free online image converter and photo tools</h2>
+ <p>PixelFix Pro brings common image utilities together in one simple workspace. Resize an image to exact pixel dimensions, compress compatible formats, convert between JPG, PNG and WEBP, crop or rotate a photo, inspect image dimensions, or render a page from a PDF as PNG. You can also combine selected images into a basic PDF document.</p>
+ <h3>How to use the tools</h3><ol><li>Choose the tool that matches your task.</li><li>Select a compatible image or PDF file from your device.</li><li>Set dimensions, format or quality where available.</li><li>Run the tool and save the generated file.</li></ol>
+ <h3>Frequently asked questions</h3>
+ <details><summary>Are these tools free?</summary><p>This version has no payment step or account requirement. Hosting, bandwidth and third-party service terms may still apply.</p></details>
+ <details><summary>Are my photos uploaded?</summary><p>Image processing is performed locally in your browser by this page. PDF.js and jsPDF libraries are loaded from a CDN. This project does not include an upload API.</p></details>
+ <details><summary>Will this website automatically rank first on Google?</summary><p>No website can guarantee a search ranking or immediate indexing. Helpful content, accessible pages, performance, links and technical SEO all matter.</p></details>
+</section>
+</main>
+<footer class="wrap footer"><p>© <span id="year"></span> PixelFix Pro. Independent browser-based utilities.</p><p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p></footer>
+</body></html>
